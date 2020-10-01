@@ -1,0 +1,14 @@
+//Напишите функцию с именем exactlyOneIsOdd, которая принимает два целых числа a, b в качестве аргументов и возвращает true, 
+//если только одно из чисел a или b является нечётным, и false, в противном случае.
+
+//Примеры:
+
+//функция exactlyOneIsOdd(3, 6) должна возвратить true;
+//функция exactlyOneIsOdd(4, 7) должна возвратить true;
+//функция exactlyOneIsOdd(5, 7) должна возвратить false;
+//функция exactlyOneIsOdd(4, 6) должна возвратить false.
+
+function exactlyOneIsOdd(a, b){
+  let result = ((a % 2 !== 0 || b % 2 !== 0) && !(a % 2 !== 0 && b % 2 !== 0 ))? true : false;
+  return result;
+}
