@@ -1,0 +1,20 @@
+//Проверьте истинность утверждения "Среди трех данных чисел есть хотя бы два противоположных по значению числа".
+
+//Напишите функцию с именем atLeastOnePairOfOpposite, которая принимает три целых числа a, b, c в качестве аргументов 
+//и возвращает true, если среди этих чисел есть хотя бы два противоположных по значению числа, и false - в противном случае.
+
+//Примеры:
+
+//функция atLeastOnePairOfOpposite(4, -4, 10) должна возвратить true;
+//функция atLeastOnePairOfOpposite(2, 6, -2) должна возвратить true;
+//функция atLeastOnePairOfOpposite(4, -9, 9) должна возвратить true;
+//функция atLeastOnePairOfOpposite(1, -1, 1) должна возвратить true;
+//функция atLeastOnePairOfOpposite(2, 2, 0) должна возвратить false;
+//функция atLeastOnePairOfOpposite(4, 6, -10) должна возвратить false.
+
+
+
+function atLeastOnePairOfOpposite(a, b, c){
+  if (a === -b || a === -c || b === -c) return true;
+  return false;
+}
