@@ -1,0 +1,21 @@
+//Проверьте истинность утверждения "Только одно из трех данных чисел является положительным"
+
+//Напишите функцию с именем onlyOneIsPositive, которая принимает три целых числа a, b, c в качестве аргументов и возвращает true, 
+//если только одно из трех чисел a, b, c являются положительными, и false - в противном случае.
+
+//Примеры:
+
+//функция onlyOneIsPositive(2, 0, -3) должна возвратить true;
+//функция onlyOneIsPositive(-4, 6, -9) должна возвратить true;
+//функция onlyOneIsPositive(-4, -6, 9) должна возвратить true;
+//функция onlyOneIsPositive(-4, 6, 10) должна возвратить false;
+//функция onlyOneIsPositive(4, 6, 10) должна возвратить false;
+//функция onlyOneIsPositive(-14, -3, -4) должна возвратить false.
+
+
+function onlyOneIsPositive(a, b, c){
+  if (a > 0 && b < 0 && c < 0) return true;
+  else if (a < 0 && b > 0 && c < 0) return true;
+  else if (a < 0 && b < 0 && c > 0) return true;
+  return false;
+}
