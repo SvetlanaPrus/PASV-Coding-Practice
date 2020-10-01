@@ -1,0 +1,17 @@
+//Проверьте истинность утверждения "Данное число является трехзначным нечетным числом"
+
+//Напишите функцию с именем isThreeDigitOddNumber, которая принимает положительное число num в качестве аргумента 
+//и возвращает true, если число num является трехзначным нечетным числом, и false - в противном случае.
+
+//Примеры:
+
+//функция isThreeDigitOddNumber(159) должна возвратить true;
+//функция isThreeDigitOddNumber(120) должна возвратить false;
+//функция isThreeDigitOddNumber(77) должна возвратить false;
+//функция isThreeDigitOddNumber(5) должна возвратить false.
+
+
+function isThreeDigitOddNumber(num){
+  if ((num % 2 !== 0) && (num > 99 && num < 1000)) return true;
+  return false;
+}
