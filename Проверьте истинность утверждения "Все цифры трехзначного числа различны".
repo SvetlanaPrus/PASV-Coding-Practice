@@ -1,0 +1,17 @@
+//Проверьте истинность утверждения "Все цифры трехзначного числа различны".
+
+//Напишите функцию с именем areAllDigitsDifferent, которая принимает положительное трехзначное число num в качестве аргумента 
+//и возвращает true, если все цифры этого числа различны, и false - в противном случае.
+
+//Примеры:
+
+//функция areAllDigitsDifferent(123) должна возвратить true;
+//функция areAllDigitsDifferent(260) должна возвратить true;
+//функция areAllDigitsDifferent(220) должна возвратить false;
+//функция areAllDigitsDifferent(363) должна возвратить false.
+
+
+function areAllDigitsDifferent(num){
+  if (Math.floor(num/100) !== Math.floor(num % 100 / 10) && Math.floor(num % 100 / 10) !== num%10 && Math.floor(num/100) !== num%10) return true;
+  else return false;
+}
