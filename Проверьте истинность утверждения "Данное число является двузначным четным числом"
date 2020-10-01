@@ -11,6 +11,6 @@
 
 
 function isTwoDigitEvenNumber(num){
-  if ((num % 2 === 0) && (Math.floor(num/100) === 0)) return true;
+  if ((num % 2 === 0) && (num >= 10 && num < 100)) return true;
   return false;
 }
