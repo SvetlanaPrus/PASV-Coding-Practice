@@ -1,0 +1,16 @@
+//Проверьте истинность утверждения "Данное число является двузначным четным числом"
+
+//Напишите функцию с именем isTwoDigitEvenNumber, которая принимает положительное число num в качестве аргумента 
+//и возвращает true, если число num является двузначным четным числом, и false - в противном случае.
+
+//Примеры:
+
+//функция isTwoDigitEvenNumber(56) должна возвратить true;
+//функция isTwoDigitEvenNumber(6) должна возвратить false;
+//функция isTwoDigitEvenNumber(45) должна возвратить false.
+
+
+function isTwoDigitEvenNumber(num){
+  if ((num % 2 === 0) && (Math.floor(num/100) === 0)) return true;
+  return false;
+}
