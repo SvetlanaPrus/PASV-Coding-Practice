@@ -1,0 +1,7 @@
+//Напишите функцию с именем isNumberPositive, которая принимает число num в качестве аргумента и возвращает 
+//true, если число num положительное, и false, в обратном случае.
+
+function isNumberPositive(num){
+  let result = (num > 0)? true: false;
+  return result;
+}
