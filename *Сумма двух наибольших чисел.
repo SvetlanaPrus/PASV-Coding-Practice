@@ -1,0 +1,20 @@
+//Сумма двух наибольших чисел. (*** Potratila bolshe vremeni chem nado. Obratit vnimanie na etu zadachu! ***)
+
+//Дано три различных по значению числа. Получите сумму двух больших чисел.
+//Напишите функцию с именем sumOfTwoLargest, которая принимает три различных числа a, b, c в качестве аргументов и возвращает сумму двух больших чисел.
+
+//Примеры:
+
+//функция sumOfTwoLargest(5, 1, 8) должна возвратить 13;
+//функция sumOfTwoLargest(3, 0, -1) должна возвратить 3;
+//функция sumOfTwoLargest(-1, -2, -3) должна возвратить -3.
+
+
+function sumOfTwoLargest(a, b, c){
+let max1 = Math.max(a, b, c);
+let max2 = 0;
+  if (a === max1) max2 = Math.max(b, c);
+  if (b === max1) max2 = Math.max(a, c);
+  if (c === max1) max2 = Math.max(a, b);
+return max1 + max2;
+}
