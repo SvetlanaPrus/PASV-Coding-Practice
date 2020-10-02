@@ -1,0 +1,19 @@
+//Имеет ли квадратное уравнение действительные корни?
+
+//Квадратное уравнение - это уравнение вида: a * x ** 2 + b * x + c = 0;
+//Квадратное уравнение имеет корни, если дискриминант D >= 0. Дискриминант вычисляется по формуле: D = b ** 2 - 4 * a * c;
+
+//Напишите функцию с именем equationHasRoots, которая принимает три числа - коэффициенты квадратного уравнения a, b, c в качестве аргументов и возвращает строку:
+//"The equation has roots", если уравнение имеет корни, "The equation has no roots", если уравнение не имеет корней.
+
+//Примеры:
+
+//функция equationHasRoots(3, 2, 1) должна возвратить "The equation has no roots";
+//функция equationHasRoots(19, 15, -34) должна возвратить "The equation has roots".
+
+
+function equationHasRoots(a, b, c){
+  let d = Math.pow(b, 2) - 4 * a * c;
+  if (d >= 0) return "The equation has roots";
+  return "The equation has no roots";
+}
