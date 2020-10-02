@@ -1,0 +1,15 @@
+Существует ли треугольник со сторонами a, b, c?
+
+Треугольник существует, если сумма любых двух его сторон больше третьей стороны.
+Напишите функцию с именем triangle, которая принимает три положительных числа - длины сторон треугольника a, b, c 
+в качестве аргументов и возвращает строку "The triangle exists" или "The triangle does not exist".
+
+Примеры:
+
+функция triangle(8, 7, 9) должна возвратить "The triangle exists";
+функция triangle(10, 1, 2) должна возвратить "The triangle does not exist".
+
+
+function triangle(a, b, c){
+  return ((a + b) > c && (b + c) > a && (a + c) > b )? "The triangle exists" : "The triangle does not exist";
+}
