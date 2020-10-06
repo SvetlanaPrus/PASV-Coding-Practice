@@ -1,0 +1,22 @@
+Даны два положительных целых числа n и k. Используя только операции сложения и вычитания, 
+найдите результат деления числа n на число k (частное), а также остаток от деления.
+Напишите функцию с именем quotientAndRemainder, которая принимает два числа n, k и возвращает частное и остаток от деления в виде массива [quotient, remainder].
+
+Примеры:
+
+функция quotientAndRemainder(5, 5) должна возвратить [1, 0];
+функция quotientAndRemainder(5, 2) должна возвратить [2, 1];
+функция quotientAndRemainder(12, 5) должна возвратить [2, 2];
+функция quotientAndRemainder(5, 7) должна возвратить [0, 5].
+
+
+function quotientAndRemainder(n, k){
+let result = [];
+let count = 0;
+  while (n >= k){
+    n = n - k;
+    count += 1;
+  }
+  result.push(count, n);
+  return result;
+}
