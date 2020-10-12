@@ -1,0 +1,23 @@
+Суммы элементов в двухмерном массиве.
+
+Напишите функцию с именем sumsInArray, которая принимает двухмерный массив arr в качестве аргумента 
+и возвращает массив, содержащий суммы элементов вложенных массивов.
+
+Примеры:
+функция sumsInArray([[1, 2], [2, -3], [3, 5], [3, 7]]) должна возвратить [3, -1, 8, 10];
+функция sumsInArray([[1, 0, 0], [2, 2]]) должна возвратить [1, 4];
+функция sumsInArray([[], [2, 2], [0]]) должна возвратить [0, 4, 0].
+
+
+function sumsInArray(arr){
+let myArr = [];
+let sum = 0;
+  for (let i = 0; i < arr.length; i++){
+    for (let j = 0; j < arr[i].length; j++){
+      sum = sum + arr[i][j];
+    }
+    myArr.push(sum);
+    sum = 0;         //obnuljaem summu, chtobi schitat zanovo dlja vtorogo elementa
+  }
+  return myArr;
+}
