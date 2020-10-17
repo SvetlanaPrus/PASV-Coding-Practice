@@ -1,0 +1,17 @@
+Выражение с модулем
+
+Напишите функцию с именем expressionValue, которая принимает три числа a, b, c в качестве аргументов и возвращает значение выражения: (|a - c| + |b -c| )/ |a + b + c|
+Результат округлите до двух десятичных знаков.
+
+Примеры:
+функция expressionValue(-1, 2, -2) должна возвратить 5;
+функция expressionValue(3, 5, -3) должна возвратить 2.8;
+функция expressionValue(0, 9, 8) должна возвратить 0.53.
+
+
+function expressionValue(a, b, c){
+let one = Math.abs(a - c);
+let two = Math.abs(b - c);
+let three = Math.abs(a + b + c);
+  return +((one + two)/three).toFixed(2);
+}
