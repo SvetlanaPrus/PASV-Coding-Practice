@@ -1,0 +1,21 @@
+Количество слов длиной 5 символов
+
+Напишите функцию countOfWords, которая принимает массив имен names в качестве аргумента, и возвращает количество имен длиной 5 символов.
+
+Пример:
+функция countOfWords(['Noah', 'Liam', 'William', 'Mason', 'James']) должна возвратить 2.
+функция countOfWords(["Ann", "Alice"]) должна возвратить 1.
+функция countOfWords(["Bob"]) должна возвратить 0.
+функция countOfWords([]) должна возвратить 0.
+
+
+****************************************
+
+
+function countOfWords(names){
+let sum = 0;
+  for (let i = 0; i < names.length; i++){
+    if (names[i].length === 5) sum += 1;
+  }
+  return sum;
+}
