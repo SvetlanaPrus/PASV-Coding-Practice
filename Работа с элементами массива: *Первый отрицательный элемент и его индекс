@@ -1,0 +1,28 @@
+Первый отрицательный элемент и его индекс
+
+Напишите функцию firstNegative, которая принимает массив arr в качестве аргумента, 
+и возвращает первый отрицательный элемент массива и его индекс (в виде массива [element, index]), 
+или undefined, если массив не содержит отрицательных элементов.
+
+Примеры:
+
+функция firstNegative([0, 25, -3, 7, 15, -1, 12]) должна возвратить [-3, 2];
+функция firstNegative([1, 2, 3, 3, 15]) должна возвратить undefined;
+функция firstNegative([]) должна возвратить undefined.
+
+
+******************************************
+
+
+function firstNegative(arr){
+let newArr = [];
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] < 0) {
+      newArr = [arr[i],i];
+      break;
+    }
+  }
+  return (newArr.length !== 0)? newArr : undefined;     //obrati vnimanie, proverjaem, chto dlina ne ravna 0.  
+                                                        // (return (newArr.length === 0)? undefined: newArr;) - tak toze rabotaet
+)
+}
