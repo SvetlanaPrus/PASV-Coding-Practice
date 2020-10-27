@@ -1,0 +1,21 @@
+Есть ли в массиве хотя бы один нулевой элемент?
+
+Напишите функцию isZeroInArray, которая принимает массив arr в качестве аргумента и возвращает true, 
+если массив содержит хотя бы один нулевой элемент, и false, в противном случае.
+
+Пример:
+
+функция isZeroInArray([20, -26, 0, -12]) должна возвратить true;
+функция isZeroInArray([2, 9, 0, 0]) должна возвратить true;
+функция isZeroInArray([1, 2, 3, 4]) должна возвратить false;
+функция isZeroInArray([1, -1]) должна возвратить false;
+функция isZeroInArray([]) должна возвратить false.
+
+
+****************************************
+
+
+function isZeroInArray(arr){
+if (arr.length === 0) return false;
+  for (let el of arr) return arr.includes(0)? true : false;
+}
