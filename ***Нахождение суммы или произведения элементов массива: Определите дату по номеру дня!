@@ -21,8 +21,7 @@
 функция getDay(366, false) должна возвратить "wrong day".
 
 
-***********************************************************
-
+*********************************************************** My solution: **********************
 
 function getDay(day, isLeap){
 if (day === 366 && isLeap === false) return "wrong day";
@@ -44,3 +43,38 @@ for (let i = 0; i < arr.length; i++){
     }
 }
 }
+
+**************************************************************** Reshenie Larisi: *****************
+Larisa Ovchinnikova  3:22 AM
+Я вот так размышляла (хотя switch можно сократить и использвать масив с названиями месяцев)
+
+function getDay(day, isLeap) {
+  if (day > 366 || day <= 0 || day === 366 && !isLeap) return "wrong day";
+  let arr = [31,28,31,30,31,30,31,31,30,31,30,31];
+  if (isLeap) arr[1] = 29;
+  let s = 0;
+  let i = 0;
+  while (s < day) {
+    s = s + arr[i];
+    i++;
+  }
+  let d = day - (s - arr[i-1]);
+  let month = i;
+  let name = '';
+  switch(month){
+    case 1: name = 'January'; break;
+    case 2: name = 'February'; break;
+    case 3: name = 'March'; break;
+    case 4: name = 'April'; break;
+    case 5: name = 'May'; break;
+    case 6: name = 'June'; break;
+    case 7: name = 'July'; break;
+    case 8: name = 'August'; break;
+    case 9: name = 'September'; break;
+    case 10: name = 'October'; break;
+    case 11: name = 'November'; break;
+    case 12: name = 'December'; break;
+  }
+  return `${name}, ${d}`
+}
+
