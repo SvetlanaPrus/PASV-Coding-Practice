@@ -1,0 +1,46 @@
+Определите дату по номеру дня!              (*** Reshila sama. Zanjalo 2 dnja. Prishlos podumat)
+
+Какая дата соответствует 100-му дню года? А какая дата соответствует дню с номером 200? 
+А ведь ответ зависит еще от того, является ли год високосным или нет!
+Напишите функцию, которая поможет определить дату, если известен номер дня в году, а также то, каким является год - високосным или нет. 
+Функция принимает номер дня day и булеву величину isLeap в качестве аргументов и возвращает дату года в виде строки "Month, day". 
+Во всех тестах номер дня - число от 1 до 366.
+
+Пример:
+
+функция getDay(15, false) должна возвратить "January, 15";
+функция getDay(41, false) должна возвратить "February, 10";
+функция getDay(59, false) должна возвратить "February, 28";
+функция getDay(60, false) должна возвратить "March, 1";
+функция getDay(60, true) должна возвратить "February, 29";
+функция getDay(61, false) должна возвратить "March, 2";
+функция getDay(61, true) должна возвратить "March, 1";
+функция getDay(365, false) должна возвратить "December, 31";
+функция getDay(365, true) должна возвратить "December, 30";
+функция getDay(366, true) должна возвратить "December, 31";
+функция getDay(366, false) должна возвратить "wrong day".
+
+
+***********************************************************
+
+
+function getDay(day, isLeap){
+if (day === 366 && isLeap === false) return "wrong day";
+let arr = [["January", 31], ["February", 29], ["March", 31], ["April", 30], ["May", 31], ["June", 30], ["July", 31], ["August", 31], ["September", 30], ["October", 31], ["November", 30], ["December", 31]];
+let sum = 0;
+for (let i = 0; i < arr.length; i++){
+  sum = sum + arr[i][1];
+    if (day <= 31) { return (arr[0][0] + ', ' + day); }                        //For january
+    if (sum === day && sum > 31) {                                             //For equal sum
+      if (isLeap === true) return (arr[i][0] + ', ' + arr[i][1]);
+      if (isLeap === false) return (arr[i+1][0] + ', ' + 1);
+    }
+    if (sum > day) {                                                                  //For other cases
+      if (isLeap === true) return (arr[i][0] + ', ' + Math.abs(sum-day-arr[i][1]));
+      if (isLeap === false){
+        if (day >=32 && day <=59) return (arr[i][0] +', '+ Math.abs((arr[i][1] - 1)-(sum - 1 - day)) );    //For february
+        if (day > 59) return (arr[i][0] +', '+ Math.abs(arr[i][1] - (sum - 1 - day)) );                    //For other months
+      }    
+    }
+}
+}
