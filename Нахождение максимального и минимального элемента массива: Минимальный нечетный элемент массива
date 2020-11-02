@@ -1,0 +1,32 @@
+Минимальный нечетный элемент массива
+
+Напишите функцию minOdd, которая принимает массив arr в качестве аргумента и возвращает минимальный нечетный элемент массива. 
+Если массив не содержит нечетных элементов или массив пустой, вернуть undefined.
+
+Используйте в решении цикл. Не разрешается использование метода Math.min().
+
+Пример:
+функция minOdd([2, 3, 4, 8, 17, 18]) должна возвратить 3;
+функция minOdd([11, 7, 4, 12) должна возвратить 7;
+функция minOdd([3, 3]) должна возвратить 3;
+функция minOdd([2, 4]) должна возвратить undefined;
+функция minOdd([]) должна возвратить undefined.
+
+
+**************************************************
+
+function minOdd(arr){
+if (arr.length === 0) return undefined;
+if (arr.length === 1 && arr[0] % 2 !== 0) return arr[0];
+let newArr = [];
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] % 2 !== 0) newArr.push(arr[i]);                 //find odd numbers.
+  }
+  if (newArr.length === 0) return undefined;                  //if not find...
+  else {
+    let min = newArr[0];
+    for (let n = 1; n < newArr.length; n++){
+      if (newArr[n] < min) min = newArr[n];                   //find min number.
+    } return min;
+  }
+}
