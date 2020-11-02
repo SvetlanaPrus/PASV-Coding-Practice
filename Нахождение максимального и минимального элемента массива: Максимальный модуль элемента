@@ -1,0 +1,27 @@
+Максимальный модуль элемента
+
+Напишите функцию maxAbsValue, которая принимает массив arr в качестве аргумента и возвращает элемент, 
+который имеет максимальную абсоютную величину (модуль). При равных значениях возвращается первое в списке.
+
+Используйте в решении цикл. Не разрешается использование метода Math.max().
+
+Пример:
+функция maxAbsValue([3, 7, -8, 1]) должна возвратить -8;
+функция maxAbsValue([-11, 6, 12) должна возвратить 12;
+функция maxAbsValue([1, -2, 2]) должна возвратить -2;
+функция maxAbsValue([]) должна возвратить undefined.
+
+
+*************************************************
+
+
+function maxAbsValue(arr){
+if (arr.length === 0) return undefined;
+if (arr.length === 1) return arr[0];
+let max = Math.abs(arr[0]);
+let indexMax = 0;
+  for (let i = 1; i < arr.length; i++){
+    if (Math.abs(arr[i]) > max) max = Math.abs(arr[i]), indexMax = i;
+  }
+  return arr[indexMax];
+}
