@@ -1,0 +1,25 @@
+Разделите массив на два массива: массив четных чисел и массив нечетных чисел
+
+Дан массив, содержащий числа. Получить два массива: массив четных чисел и массив нечетных чисел.
+Напишите функцию separateEvenAndOdd, которая принимает числовой массив arr в качестве аргумента, 
+возвращает массив, содержащий массив четных чисел и массив нечетных чисел в виде: [[array of even numbers], [array of odd numbers]].
+
+Пример:
+функция separateEvenAndOdd([-2, -3, 7, 4) должна возвратить [[-2, 4],[-3, 7]];
+функция separateEvenAndOdd([4, 2]) должна возвратить [[4, 2], []];
+функция separateEvenAndOdd([]) должна возвратить [[], []].
+
+
+**********************************************
+
+
+function separateEvenAndOdd(arr){
+if (arr.length === 0) return [[],[]];
+let arrayEven = [], arrayOdd = [], newArr = [];
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] % 2 === 0) arrayEven.push(arr[i]);
+    if (arr[i] % 2 !== 0) arrayOdd.push(arr[i]);
+  }
+  newArr.push(arrayEven, arrayOdd);
+  return newArr;
+}
