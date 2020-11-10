@@ -1,0 +1,28 @@
+Удалите все нечисловые элементы в начале массива
+
+Дан массив, в начале которого находится некоторое количество нечисловых элементов, после которых могут находиться числа. 
+Напишите функцию deleteNotNumbers, которая принимает смешанный массив arr в качестве аргумента, 
+удаляет все нечисловые элементы массива, находящиеся до первого числа, и возвращает полученный массив.
+
+Пример:
+
+функция deleteNotNumbers(['a', 'b', 1, 2, 3]) должна возвратить [1, 2, 3];
+функция deleteNotNumbers([true, false, "a", 1, 2, 3]) должна возвратить [1, 2, 3];
+функция deleteNotNumbers([1, 2, 3]) должна возвратить [1, 2, 3];
+функция deleteNotNumbers(['a', 'b']) должна возвратить [];
+функция deleteNotNumbers(['a', 'b', 2, 'a']) должна возвратить [2, 'a'];
+функция deleteNotNumbers([]) должна возвратить [].
+
+
+**************************************
+
+function deleteNotNumbers(arr){
+if (arr.length === 0) return [];
+//if (arr.every(el => Number.isInteger(el) === true)) return arr;
+//if (arr.every(el => Number.isInteger(el) === false)) return [];
+
+let i = 0;
+while ( typeof arr[i] !== "number" && arr.length !== 0) {arr.shift();}
+return arr;
+
+}
