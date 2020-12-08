@@ -1,0 +1,25 @@
+Перемешайте массив:
+
+
+
+1. version: *************************************
+
+function blender(arr){
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+console.log(blender([1, 2, 3, 4, 5]))
+
+
+
+2. version: ***************************************
+
+function blender(arr){
+  for (let i = 0; i < arr.length; i++) {
+    let newInd = Math.floor(Math.random() * (i+1));
+    [arr[i], arr[newInd]] = [arr[newInd], arr[i]];
+  }
+  return arr;
+}
+
+console.log(blender([1, 2, 3, 4, 5]))
